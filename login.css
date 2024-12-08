@@ -1,0 +1,319 @@
+.p-login {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .p-login .div {
+    background-color: #ffffff;
+    width: 393px;
+    height: 852px;
+    position: relative;
+  }
+  
+  .p-login .frame {
+    display: flex;
+    flex-direction: column;
+    width: 393px;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    top: 98px;
+    left: 0;
+  }
+  
+  .p-login .frame-2 {
+    position: relative;
+    width: 171px;
+    height: 159px;
+    background-image: url(https://c.animaapp.com/6tyHRTzl/img/frame-37348@2x.png);
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  
+  .p-login .frame-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .p-login .div-wrapper {
+    align-items: center;
+    padding: 0px 16px;
+    display: flex;
+    gap: 10px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .p-login .text-wrapper {
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-family: "Inter", Helvetica;
+    font-weight: 500;
+    color: #535353;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .p-login .frame-4 {
+    display: flex;
+    width: 361px;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: #d9d9d9;
+  }
+  
+  .p-login .frame-5 {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    align-self: stretch;
+    flex: 0 0 auto;
+  }
+  
+  .p-login .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    font-family: "Inter", Helvetica;
+    font-weight: 500;
+    color: transparent;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .p-login .img {
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .p-login .frame-6 {
+    display: flex;
+    width: 62px;
+    align-items: center;
+    position: relative;
+    align-self: stretch;
+  }
+  
+  .p-login .text-wrapper-3 {
+    position: relative;
+    width: fit-content;
+    margin-right: -39.00px;
+    font-family: "Inter", Helvetica;
+    font-weight: 500;
+    color: transparent;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .p-login .button {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 361px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+    background-color: #1aa7ec;
+    border-radius: 8px;
+  }
+  
+  .p-login .ti-p-theo {
+    position: relative;
+    width: fit-content;
+    font-family: "Inter", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .p-login .frame-7 {
+    flex-direction: column;
+    align-items: flex-start;
+    display: flex;
+    gap: 10px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .p-login .frame-8 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0px 16px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .p-login .ch-a-c-t-i-kho-n-ng {
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: transparent;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .p-login .span {
+    color: #696969;
+  }
+  
+  .p-login .text-wrapper-4 {
+    font-weight: 500;
+    color: #696969;
+  }
+  
+  .p-login .text-wrapper-5 {
+    font-weight: 500;
+    color: #4285f4;
+  }
+  
+  .p-login .text-wrapper-6 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-family: "Inter", Helvetica;
+    font-weight: 600;
+    color: var(--text);
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .p-login .frame-9 {
+    display: flex;
+    flex-direction: column;
+    width: 361px;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .p-login .frame-10 {
+    display: flex;
+    height: 46px;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 0px 0px 80px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    margin-top: -1.00px;
+    margin-left: -1.00px;
+    margin-right: -1.00px;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #d9d9d9;
+  }
+  
+  .p-login .frame-11 {
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .p-login .text-wrapper-7 {
+    position: relative;
+    width: fit-content;
+    font-family: "Inter", Helvetica;
+    font-weight: 500;
+    color: #535353;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .p-login .frame-12 {
+    display: flex;
+    height: 46px;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 0px 0px 80px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    margin-bottom: -1.00px;
+    margin-left: -1.00px;
+    margin-right: -1.00px;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #d9d9d9;
+  }
+  
+  .p-login .p {
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-family: "Inter", Helvetica;
+    font-weight: 500;
+    color: var(--gray);
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    text-decoration: underline;
+  }
+  
+  .p-login .frame-13 {
+    display: flex;
+    width: 393px;
+    align-items: center;
+    padding: 0px 16px;
+    position: absolute;
+    top: 52px;
+    left: 0;
+  }
+  
+  .p-login .button-2 {
+    position: relative;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .p-login .text-wrapper-8 {
+    position: relative;
+    align-self: stretch;
+    width: 301px;
+    margin-top: -1.00px;
+    font-family: "Inter", Helvetica;
+    font-weight: 600;
+    color: #1e1e1e;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
