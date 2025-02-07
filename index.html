@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng ký tài khoản</title>
+  <style>
+    /* Reset một số style cơ bản */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      width: 350px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
+      font-size: 14px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .form-group input:focus {
+      border-color: #66afe9;
+      outline: none;
+    }
+    .error-message {
+      color: red;
+      font-size: 12px;
+      margin-top: 5px;
+      display: none;
+    }
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #28a745;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Đăng ký tài khoản</h2>
+    <div class="form-group">
+      <label for="username">Tên đăng nhập</label>
+      <input type="text" id="username" placeholder="Nhập tên đăng nhập">
+      <div class="error-message" id="usernameError">Vui lòng nhập tên đăng nhập</div>
+    </div>
+    <div class="form-group">
+      <label for="password">Mật khẩu</label>
+      <input type="password" id="password" placeholder="Nhập mật khẩu">
+      <div class="error-message" id="passwordError">Vui lòng nhập mật khẩu</div>
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Nhập lại mật khẩu</label>
+      <input type="password" id="confirmPassword" placeholder="Nhập lại mật khẩu">
+      <div class="error-message" id="confirmPasswordError">Mật khẩu không khớp</div>
+    </div>
+    <div class="form-group">
+      <label for="fullName">Tên</label>
+      <input type="text" id="fullName" placeholder="Nhập tên của bạn">
+      <div class="error-message" id="fullNameError">Vui lòng nhập tên của bạn</div>
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber">Số điện thoại</label>
+      <input type="tel" id="phoneNumber" placeholder="Nhập số điện thoại">
+      <div class="error-message" id="phoneNumberError">Vui lòng nhập số điện thoại</div>
+    </div>
+    <button class="btn" onclick="register()">Đăng ký ngay</button>
+  </div>
+
+  <script>
+    function register() {
+      // Lấy giá trị từ các input
+      var username = document.getElementById("username").value.trim();
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirmPassword").value;
+      var fullName = document.getElementById("fullName").value.trim();
+      var phoneNumber = document.getElementById("phoneNumber").value.trim();
+
+      // Reset thông báo lỗi
+      document.getElementById("usernameError").style.display = "none";
+      document.getElementById("passwordError").style.display = "none";
+      document.getElementById("confirmPasswordError").style.display = "none";
+      document.getElementById("fullNameError").style.display = "none";
+      document.getElementById("phoneNumberError").style.display = "none";
+
+      var isValid = true;
+
+      // Kiểm tra từng trường
+      if (username === "") {
+        document.getElementById("usernameError").style.display = "block";
+        isValid = false;
+      }
+      if (password === "") {
+        document.getElementById("passwordError").style.display = "block";
+        isValid = false;
+      }
+      if (confirmPassword === "" || confirmPassword !== password) {
+        document.getElementById("confirmPasswordError").style.display = "block";
+        isValid = false;
+      }
+      if (fullName === "") {
+        document.getElementById("fullNameError").style.display = "block";
+        isValid = false;
+      }
+      if (phoneNumber === "") {
+        document.getElementById("phoneNumberError").style.display = "block";
+        isValid = false;
+      }
+
+      // Nếu tất cả thông tin hợp lệ thì lưu và chuyển hướng
+      if (isValid) {
+        // Lưu tên đăng nhập vào localStorage để hiển thị ở trang greeting.html
+        localStorage.setItem("username", username);
+        // Nếu cần lưu thêm các thông tin khác:
+        localStorage.setItem("fullName", fullName);
+        localStorage.setItem("phoneNumber", phoneNumber);
+        // Lưu mật khẩu trên client không an toàn, vì vậy không khuyến khích lưu mật khẩu trên localStorage.
+        
+        // Chuyển hướng sang trang greeting.html
+        window.location.href = "greeting.html";
+      }
+    }
+  </script>
+</body>
+</html>

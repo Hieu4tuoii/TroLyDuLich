@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chào Mừng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Reset cơ bản */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    /* Dashboard */
+    .dashboard {
+      background-color: #fff;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .dashboard p {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    .dashboard button {
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+    .dashboard button:hover {
+      background-color: #218838;
+    }
+    /* Danh sách video */
+    .video-list {
+      max-width: 800px;
+      margin: 20px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 10px;
+    }
+    .video-item {
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .video-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .video-item img {
+      width: 100%;
+      display: block;
+    }
+    .video-info {
+      padding: 15px;
+      text-align: center;
+    }
+    .video-info h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .video-info p {
+      font-size: 16px;
+      color: #777;
+    }
+    /* Thông báo kích hoạt tài khoản */
+    .notification {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .notification-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+    .notification-content p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .notification-content button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 0 10px;
+      transition: background 0.3s;
+    }
+    .notification-content button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Dashboard -->
+  <div class="dashboard">
+    <p>Xin chào: <span id="username"></span></p>
+    <p>Số dư: <span id="balance">0 vnđ</span></p>
+    <p>Số video đã xem: <span id="videosWatched">0</span></p>
+    <button id="withdrawBtn">Rút tiền</button>
+  </div>
+
+  <!-- Danh sách video -->
+  <div class="video-list">
+    <!-- Video 1 -->
+    <div class="video-item" onclick="videoClick('video1')">
+      <img src="https://media.themoviedb.org/t/p/w250_and_h141_face/q3jHCb4dMfYF6ojikKuHd6LscxC.jpg" alt="Video 1">
+      <div class="video-info">
+        <h3>Video 1</h3>
+      </div>
+    </div>
+    <!-- Video 2 -->
+    <div class="video-item" onclick="videoClick('video2')">
+      <img src="https://media.themoviedb.org/t/p/w250_and_h141_face/q3jHCb4dMfYF6ojikKuHd6LscxC.jpg" alt="Video 2">
+      <div class="video-info">
+        <h3>Video 2</h3>
+      </div>
+    </div>
+    <!-- Video 3 -->
+    <div class="video-item" onclick="videoClick('video3')">
+      <img src="https://media.themoviedb.org/t/p/w250_and_h141_face/q3jHCb4dMfYF6ojikKuHd6LscxC.jpg" alt="Video 3">
+      <div class="video-info">
+        <h3>Video 3</h3>
+      </div>
+    </div>
+    <!-- Thêm các video khác nếu cần -->
+  </div>
+
+  <!-- Thông báo kích hoạt tài khoản -->
+  <div class="notification" id="notification">
+    <div class="notification-content">
+      <p>Tài khoản của bạn chưa được kích hoạt, vui lòng mua gói để kích hoạt!</p>
+      <button onclick="activateAccount()">Mua gói</button>
+      <button style="background-color: red;" onclick="closeNotification()">Đóng</button>
+    </div>
+  </div>
+
+  <script>
+    // Lấy tên đăng nhập từ localStorage
+    var username = localStorage.getItem("username");
+    if (!username) {
+      // Nếu chưa đăng nhập, chuyển hướng về trang index.html
+      window.location.href = "index.html";
+    }
+    document.getElementById("username").textContent = username;
+
+    // Xử lý sự kiện click vào video
+    function videoClick(videoId) {
+      // Tại đây bạn có thể kiểm tra trạng thái kích hoạt của tài khoản
+      // Hiện thông báo kích hoạt
+      document.getElementById("notification").style.display = "flex";
+    }
+
+    // Đóng thông báo
+    function closeNotification() {
+      document.getElementById("notification").style.display = "none";
+    }
+
+    // Xử lý nút kích hoạt: chuyển đến trang activation.html
+    function activateAccount() {
+      window.location.href = "https://videothunhap.com/99k.html";
+    }
+
+    // Xử lý nút "Rút tiền"
+    document.getElementById("withdrawBtn").addEventListener("click", function() {
+      alert("Số dư hiện tại của bạn không đủ!");
+    });
+  </script>
+</body>
+</html>
