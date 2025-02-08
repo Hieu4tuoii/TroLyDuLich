@@ -19,6 +19,7 @@
     }
     /* Dashboard */
     .dashboard {
+      min-height: 1vh;
       background-color: #fff;
       max-width: 800px;
       margin: 20px auto;
@@ -142,6 +143,90 @@
     .notification-content button:hover {
       background: #0056b3;
     }
+    .footer {
+        background-color: #000000;
+        color: #ffffff;
+        padding: 20px;
+        margin-top: 20px;
+        font-family: Arial, sans-serif;
+      }
+      .logo-footer {
+        width: 150px;
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .footer-left {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .brand-name {
+        color: #ffd700;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .copyright {
+        font-size: 14px;
+        opacity: 0.8;
+      }
+
+      .contact {
+        font-size: 14px;
+      }
+
+      .contact a {
+        color: #3b82f6;
+        text-decoration: none;
+        margin-left: 5px;
+      }
+
+      .contact a:hover {
+        text-decoration: underline;
+      }
+
+      .footer-right {
+        display: flex;
+        gap: 24px;
+      }
+
+      .footer-right a {
+        color: #3b82f6;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .footer-right a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .footer-container {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .footer-right {
+          gap: 15px;
+        }
+      }
   </style>
 </head>
 <body>
@@ -242,6 +327,31 @@
     </div>
   </div>
 
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="brand">
+          <img
+            class="logo-footer"
+            src="image/logo.png"
+            alt=""
+          />
+        </div>
+        <div class="copyright">Bản quyền thuộc ©2023 Xem Video Kiếm Tiền</div>
+        <div class="contact">
+          Liên hệ:<a href="mailto:xemvideokiemtien@gmail.com"
+            >xemvideokiemtien@gmail.com</a
+          >
+        </div>
+      </div>
+      <div class="footer-right">
+        <a href="/gioi-thieu">Giới thiệu</a>
+        <a href="/chinh-sach-bao-mat">Chính sách bảo mật</a>
+        <a href="/dieu-khoan">Điều khoản sử dụng</a>
+      </div>
+    </div>
+  </footer>
+
   <script>
     // Lấy tên đăng nhập từ localStorage
     var username = localStorage.getItem("username");
@@ -265,7 +375,7 @@
 
     // Xử lý nút kích hoạt: chuyển hướng đến trang mua gói
     function activateAccount() {
-      window.location.href = "https://videothunhap.com/99k.html";
+      window.location.href = "/danhsachgoi.html";
     }
 
     // Xử lý nút "Rút tiền"

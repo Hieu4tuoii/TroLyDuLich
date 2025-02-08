@@ -121,7 +121,7 @@
             <a href="/">
               <img
                 class="logo"
-                src="https://i.ibb.co/0mKvrML/Picsart-24-12-30-00-09-28-633.png"
+                src="image/logo.png"
                 alt=""
               />
             </a>
@@ -151,7 +151,7 @@
             Vui lòng nhập mật khẩu
           </div>
         </div>
-        <button class="btn" onclick="register()">Đăng nhập</button>
+        <button class="btn" onclick="login()">Đăng nhập</button>
         <p
           style="
             text-align: center;
@@ -167,5 +167,37 @@
         </p>
       </div>
     </div>
+    <script>
+        function login() {
+        // Lấy giá trị từ các input
+        var username = document.getElementById("username").value.trim();
+        var password = document.getElementById("password").value;
+
+        // Reset thông báo lỗi
+        document.getElementById("usernameError").style.display = "none";
+        document.getElementById("passwordError").style.display = "none";
+
+        var isValid = true;
+
+        // Kiểm tra từng trường
+        if (username === "") {
+          document.getElementById("usernameError").style.display = "block";
+          isValid = false;
+        }
+        if (password === "") {
+          document.getElementById("passwordError").style.display = "block";
+          isValid = false;
+        }
+
+        // Nếu tất cả thông tin hợp lệ thì lưu và chuyển hướng
+        if (isValid) {
+          // Lưu tên đăng nhập vào localStorage để hiển thị ở trang greeting.html
+          localStorage.setItem("username", username);
+          // Nếu cần lưu thêm các thông tin khác:
+          // Chuyển hướng sang trang greeting.html
+          window.location.href = "greeting.html";
+        }
+      }
+    </script>
   </body>
 </html>

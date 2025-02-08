@@ -168,6 +168,8 @@
         font-weight: bold;
       }
 
+     
+
       @media (max-width: 900px) {
         .grid {
           grid-template-columns: repeat(2, 1fr);
@@ -313,22 +315,22 @@
         <a href="/">
           <img
             class="logo"
-            src="https://i.ibb.co/0mKvrML/Picsart-24-12-30-00-09-28-633.png"
-            alt=""
+            src="image/logo.png"
+            alt="logo"
           />
         </a>
       </header>
       <div class="btn-dang-nhap-dang-ky">
-        <button class="btn-dang-nhap">Đăng nhập</button>
+        <button id="btn-dang-nhap" class="btn-dang-nhap">Đăng nhập</button>
         <button class="btn-dang-ky">Đăng ký</button>
       </div>
       <div>
-        <h1 class="highlight title-main">Xem video Kiếm tiền</h1>
+        <h1 class="highlight title-main">XEM VIDEO KIẾM TIỀN</h1>
         <div class="grid">
           <div class="card">
             <div class="card-header">
               <div class="card-icon">💰</div>
-              <h3 class="card-title highlight">Kiếm tiền online</h3>
+              <h3 class="card-title ">Kiếm tiền online</h3>
             </div>
             <div class="card-content">
               Với việc xem video mỗi ngày là cách mà chúng tôi giúp bạn kiếm
@@ -339,7 +341,7 @@
           <div class="card">
             <div class="card-header">
               <div class="card-icon">📝</div>
-              <h3 class="card-title highlight">Bạn kiếm tiền bằng cách nào?</h3>
+              <h3 class="card-title ">Bạn kiếm tiền bằng cách nào?</h3>
             </div>
             <div class="card-content">
               Đơn giản. Bạn chỉ cần đăng kí, chọn mức vốn phù hợp với tài chính
@@ -351,7 +353,7 @@
           <div class="card">
             <div class="card-header">
               <div class="card-icon">🎯</div>
-              <h3 class="card-title highlight">
+              <h3 class="card-title ">
                 Tại sao chúng tôi trả tiền cho bạn?
               </h3>
             </div>
@@ -426,32 +428,32 @@
         <div class="gallery">
           <div class="gallery-item">
             <img
-              src="https://img.upanh.tv/2023/10/15/z4786413099704_192be2cf16314d276d369c2160456a7f.jpg"
-              alt="Image 1"
+              src="image/gioithieu.jpg"
+              alt="giới thiệu"
             />
           </div>
           <div style="background-color: white" class="gallery-item">
             <div>
               <img
                 style="margin-right: 60px; width: 70%"
-                src="https://img.upanh.tv/2023/10/15/z4786413100383_efeada4d3e4f5b4bcbaf472f8b36fbde.jpg"
-                alt=""
+                src="image/buoc1.jpg"
+                alt="bước 1"
               />
               <img
                 style="margin-left: 60px; width: 70%"
-                src="https://img.upanh.tv/2023/10/15/z4786413125622_202b4549c2336890eb39b3694b5f8b63.jpg"
-                alt=""
+                src="image/buoc2.jpg"
+                alt="bước 2"
               />
               <img
                 style="margin-right: 20px; width: 70%"
-                src="https://img.upanh.tv/2023/10/15/z4786413126430_9f5e6ef1c85952a01c02645f8bc60676.jpg"
-                alt=""
+                src="image/buoc3.jpg"
+                alt="bước 3"
               />
             </div>
           </div>
           <div class="gallery-item">
             <img
-              src="https://img.upanh.tv/2023/09/28/z4736083539523_a8599b986d73f49309fd246b643d31c4.jpg"
+              src="image/danhsachgiai.jpg"
               alt="Image 3"
             />
           </div>
@@ -464,7 +466,7 @@
           <div class="brand">
             <img
               class="logo-footer"
-              src="https://i.ibb.co/0mKvrML/Picsart-24-12-30-00-09-28-633.png"
+              src="image/logo.png"
               alt=""
             />
           </div>
@@ -543,6 +545,13 @@
             behavior: "smooth",
             block: "start",
           });
+        });
+
+       //chuyen huong sang trang login.html
+      document
+        .querySelector(".btn-dang-nhap")
+        .addEventListener("click", function () {
+          window.location.href = "login.html";
         });
     </script>
   </body>
