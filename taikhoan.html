@@ -17,6 +17,13 @@
       color: #333;
       line-height: 1.6;
     }
+    .logo {
+        width: 150px;
+        margin-bottom: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
     /* Dashboard */
     .dashboard {
       min-height: 1vh;
@@ -230,8 +237,18 @@
   </style>
 </head>
 <body>
+  <header>
+    <a href="/">
+      <img
+        class="logo"
+        src="image/logo.png"
+        alt="logo"
+      />
+    </a>
+  </header>
   <!-- Dashboard -->
   <div class="dashboard">
+    
     <p>Xin chào: <span id="username"></span></p>
     <p>Số dư: <span id="balance">0 vnđ</span></p>
     <p>Số video đã xem: <span id="videosWatched">0</span></p>
@@ -314,6 +331,15 @@
       </div>
       <div class="video-info">
         <h3>Video 8</h3>
+      </div>
+    </div>
+    <div class="video-item" onclick="videoClick('video8')">
+      <div class="video-thumbnail">
+        <img src="https://media.themoviedb.org/t/p/w250_and_h141_face/q3jHCb4dMfYF6ojikKuHd6LscxC.jpg" alt="Video 8">
+        <div class="play-icon">&#9658;</div>
+      </div>
+      <div class="video-info">
+        <h3>Video 9</h3>
       </div>
     </div>
   </div>
